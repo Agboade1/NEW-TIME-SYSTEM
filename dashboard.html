@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K S Energy Power Africa - Dashboard</title>
-</head>
-<body>
-    <h1>Welcome to K S Energy Power Africa</h1>
-    <h2>Your Shift Management Dashboard</h2>
-    
-    <div id="shiftDetails">
-        <h3>Your Shift Information</h3>
-        <p>Your shift details will be displayed here.</p>
-    </div>
+function login(name, pass) {
+    // Find the user from the stored users array
+    let user = users.find(u => u.name === name && u.pass === pass);
 
-    <button onclick="logout()">Logout</button>
-
-    <script>
-        function logout() {
-            window.location.href = "index.html";  // Redirect to the login page
-        }
-    </script>
-</body>
-</html>
+    if (user) {
+        alert("Login successful!");
+        window.location.href = "dashboard.html";  // Redirect to the dashboard
+    } else {
+        alert("Invalid login credentials. Please try again.");
+    }
+}
