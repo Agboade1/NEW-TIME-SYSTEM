@@ -3,36 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K S Energy Power Africa - Registration and Login</title>
-    <script src="js/auth.js" defer></script>
+    <title>K S Energy Power Africa - Dashboard</title>
 </head>
 <body>
     <h1>Welcome to K S Energy Power Africa</h1>
-    <h2>Shift Management System</h2>
+    <h2>Your Shift Management Dashboard</h2>
+    
+    <div id="shiftDetails">
+        <h3>Your Shift Information</h3>
+        <p>Your shift details will be displayed here.</p>
+    </div>
 
-    <h3>Register</h3>
-    <form id="registrationForm">
-        <label for="regName">Full Name:</label>
-        <input type="text" id="regName" name="name" required><br><br>
-        
-        <label for="regPhone">Phone:</label>
-        <input type="text" id="regPhone" name="phone" required><br><br>
-        
-        <label for="regPass">Password:</label>
-        <input type="password" id="regPass" name="password" required><br><br>
-        
-        <button type="button" onclick="register()">Register</button>
-    </form>
+    <button onclick="logout()">Logout</button>
 
-    <h3>Login</h3>
-    <form id="loginForm">
-        <label for="loginName">Username:</label>
-        <input type="text" id="loginName" name="name" required><br><br>
-
-        <label for="loginPass">Password:</label>
-        <input type="password" id="loginPass" name="password" required><br><br>
-
-        <button type="button" onclick="login()">Login</button>
-    </form>
+    <script>
+        function logout() {
+            window.location.href = "index.html";  // Redirect to the login page
+        }
+    </script>
 </body>
 </html>
