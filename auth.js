@@ -1,4 +1,4 @@
-let users = JSON.parse(localStorage.getItem("users")) || []; // Load stored users or an empty array
+let users = JSON.parse(localStorage.getItem("users")) || []; // Load stored users or initialize with an empty array
 
 // Register function
 function register() {
@@ -6,35 +6,35 @@ function register() {
     let phone = document.getElementById("regPhone").value;
     let pass = document.getElementById("regPass").value;
 
-    // Validate input fields
+    // Validate if all fields are filled
     if (!name || !phone || !pass) {
         alert("All fields are required!");
         return;
     }
 
-    // Check if user already exists
+    // Check if the user already exists
     let existingUser = users.find(u => u.name === name);
     if (existingUser) {
         alert("This user is already registered.");
         return;
     }
 
-    // Add new user to users array
+    // Add the new user to the users array
     users.push({ name, phone, pass });
-    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("users", JSON.stringify(users)); // Store updated users list in localStorage
 
     alert("Registration successful! You can now log in.");
 
-    // Optionally, auto-login after registration (or redirect to login page)
-    login(name, pass);  // Automatically log the user in after registering
+    // Automatically log the user in after registration
+    login(name, pass);  // Call login function with the current credentials
 
-    // Reset the registration form
-    document.getElementById("registrationForm").reset();
+    // Optionally, reset the registration form
+    document.getElementById("registrationForm").reset(); 
 }
 
 // Login function
 function login(name, pass) {
-    // Find the user by name and password
+    // Find the user from the stored users array
     let user = users.find(u => u.name === name && u.pass === pass);
 
     if (user) {
@@ -45,10 +45,10 @@ function login(name, pass) {
     }
 }
 
-// Handle login via the form
+// Handle login when the login form is submitted
 function handleLogin() {
     let name = document.getElementById("loginName").value;
     let pass = document.getElementById("loginPass").value;
 
-    login(name, pass);  // Call the login function
+    login(name, pass);  // Call login function
 }
