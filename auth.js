@@ -1,11 +1,12 @@
-let users = JSON.parse(localStorage.getItem("users")) || [];
+let users = JSON.parse(localStorage.getItem("users")) || []; // Load stored users or an empty array
 
+// Register function
 function register() {
     let name = document.getElementById("regName").value;
     let phone = document.getElementById("regPhone").value;
     let pass = document.getElementById("regPass").value;
 
-    // Validate if fields are empty
+    // Validate input fields
     if (!name || !phone || !pass) {
         alert("All fields are required!");
         return;
@@ -23,20 +24,31 @@ function register() {
     localStorage.setItem("users", JSON.stringify(users));
 
     alert("Registration successful! You can now log in.");
-    document.getElementById("registrationForm").reset();  // Clear the form
+
+    // Optionally, auto-login after registration (or redirect to login page)
+    login(name, pass);  // Automatically log the user in after registering
+
+    // Reset the registration form
+    document.getElementById("registrationForm").reset();
 }
 
-function login() {
-    let name = document.getElementById("loginName").value;
-    let pass = document.getElementById("loginPass").value;
-
-    // Find user in localStorage based on name and password
+// Login function
+function login(name, pass) {
+    // Find the user by name and password
     let user = users.find(u => u.name === name && u.pass === pass);
+
     if (user) {
         alert("Login successful!");
-        window.location.href = "dashboard.html";  // Redirect to dashboard
+        window.location.href = "dashboard.html";  // Redirect to the dashboard
     } else {
         alert("Invalid login credentials. Please try again.");
     }
 }
 
+// Handle login via the form
+function handleLogin() {
+    let name = document.getElementById("loginName").value;
+    let pass = document.getElementById("loginPass").value;
+
+    login(name, pass);  // Call the login function
+}
