@@ -5,6 +5,7 @@ function register() {
     let phone = document.getElementById("regPhone").value;
     let pass = document.getElementById("regPass").value;
 
+    // Validate if fields are empty
     if (!name || !phone || !pass) {
         alert("All fields are required!");
         return;
@@ -29,6 +30,7 @@ function login() {
     let name = document.getElementById("loginName").value;
     let pass = document.getElementById("loginPass").value;
 
+    // Find user in localStorage based on name and password
     let user = users.find(u => u.name === name && u.pass === pass);
     if (user) {
         alert("Login successful!");
@@ -37,3 +39,4 @@ function login() {
         alert("Invalid login credentials. Please try again.");
     }
 }
+
