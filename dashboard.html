@@ -1,11 +1,1 @@
-function login(name, pass) {
-    // Find the user from the stored users array
-    let user = users.find(u => u.name === name && u.pass === pass);
 
-    if (user) {
-        alert("Login successful!");
-        window.location.href = "dashboard.html";  // Redirect to the dashboard
-    } else {
-        alert("Invalid login credentials. Please try again.");
-    }
-}
