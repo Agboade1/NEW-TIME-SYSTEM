@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shift Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Shift Management System</h1>
+    <label>Enter Start Date:</label>
+    <input type="date" id="startDate">
+    <button onclick="checkShift()">Check Shift</button>
+    <p>Your shift: <span id="shiftResult">Not Checked</span></p>
+
+    <h2>🛠 Report a Defect</h2>
+    <input type="text" id="defectTitle" placeholder="Defect Title">
+    <textarea id="defectDescription" placeholder="Describe the defect..."></textarea>
+    <button onclick="submitDefect()">Submit Defect</button>
+
+    <h3>📢 Announcements & Updates</h3>
+    <ul id="postList"></ul>
+
+    <h3>🔗 Share Links</h3>
+    <input type="text" id="postLink" placeholder="Paste your link here">
+    <button onclick="shareLink()">Share</button>
+
+    <script src="js/script.js"></script>
+    <script src="js/defects.js"></script>
+    <script src="js/posts.js"></script>
+</body>
+</html>

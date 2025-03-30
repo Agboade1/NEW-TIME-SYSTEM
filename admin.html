@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Admin Panel</h1>
+
+    <h2>🛠 Defect Management</h2>
+    <ul id="adminDefectList"></ul>
+
+    <h2>📢 Manage Announcements</h2>
+    <textarea id="adminPost" placeholder="Write an announcement..."></textarea>
+    <button onclick="postAnnouncement()">Post</button>
+
+    <h2>🛑 User Approvals</h2>
+    <ul id="pendingUsers"></ul>
+
+    <script src="js/auth.js"></script>
+    <script src="js/defects.js"></script>
+    <script src="js/posts.js"></script>
+</body>
+</html>
